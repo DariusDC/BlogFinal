@@ -1,0 +1,31 @@
+<%- include("partials/header") %> 
+
+    <h1>Home</h1>
+
+    <p> <%= HomeText  %> </p>
+
+     <% for (var i = posts.length - 1; i >= 0; i--) {  %> 
+        <a href="/posts/<%= posts[i]._id %>" style="text-decoration: none; color: black;"> <h1> <%= posts[i].title %>  </h1> </a>
+        <p> <%= posts[i].text.slice(0, 150) + " ..." %> 
+            <a href="/posts/<%= (posts[i]._id)%>" class="read-more">Read more</a>
+        </p>
+    <% };  %>  
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <% if (prev) { %> 
+                <li class="page-item">
+                    <a class="page-link" href="/page/<%=page-1%>" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/page/<%=page-1%>"> <%= page-1 %> </a></li>
+            <% } %> 
+          <li class="page-item"><a class="page-link" href="/page/<%=page%>"><%=page%> </a></li>
+          <% if (next) { %> 
+            <li class="page-item"><a class="page-link" href="/page/<%=page+1 %> "><%= page+1%> </a></li>
+            <li class="page-item">
+                <a class="page-link" href="/page/<%= page+1%> ">Next</a>
+            </li>
+        <% } %> 
+        </ul>
+      </nav>
+
+<%- include("partials/footer") %>

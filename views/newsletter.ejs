@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+<br> <br>
+<center>
+<div style="text-align: center; width: 30%;">
+    <form class="form-signin" method="POST" action="/newsletter">
+        <img class="mb-4 albastru" src="images/newsletter.png" alt="" width="72" height="72"/>
+        <h1 class="h3 mb-3 font-weight-normal">Sign in for my Newsletter!</h1>
+        <label for="inputFirst" class="sr-only">First Name </label>
+        <input  type="text" name="inputFirst" class="form-control first" placeholder="First Name" required autofocus>
+        <label for="inputLast" class="sr-only">Last Name</label>
+        <input type="text" name="inputLast" class="form-control middle" placeholder="Last Name" required/>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" name="inputEmail"; class="form-control last" placeholder="Your email" required/>
+        <br><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Sign in
+        </button>
+    </form>
+</div>
+</center>
+<%- include('partials/footer') %> 

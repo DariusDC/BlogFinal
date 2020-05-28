@@ -1,0 +1,16 @@
+
+<%- include('partials/header')  %> 
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+        <h1 class="display-4">Oh no!</h1>
+        <p class="lead">There was a problem while trying to sign you up... Please try again.</p>
+
+            <form action="/failure" method="POST">
+                <button class="btn btn-lg btn-warning">Try again!</button>
+            </form>
+
+        </div>
+    </div>
+
+  <%- include('partials/footer')  %> 

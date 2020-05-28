@@ -1,0 +1,18 @@
+<%-  include('partials/header') %>
+
+    <h1 style="text-align: left; font-size: 3rem;"><%=  post.title %> </h1>
+    <div style="white-space: pre-wrap;">
+        <%= post.text %> 
+    </div>
+
+    <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+    <% if (adminConnected) { %> 
+        <form action="/edit" method="POST">
+            <button type="submit" value="<%=post._id%> " class="btn btn-primary btn-lg" name="editID" style="float: left;">Edit</button>
+        </form>
+
+        <form action="/delete" method="POST">
+            <button type="submit" class="btn btn-danger btn-lg" value="<%=post._id%>" name="deleteBTN" style="float: right;">Delete</button>
+        </form>
+    <% } %> 
+<%- include('partials/footer')  %> 
